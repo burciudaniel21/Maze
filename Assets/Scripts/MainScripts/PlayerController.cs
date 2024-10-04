@@ -62,17 +62,4 @@ public class PlayerController : MonoBehaviour
             ViewCamera.transform.LookAt(transform.position);
         }
     }
-
-    //Collect coins
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Coin"))
-        {
-            if (mAudioSource != null && CoinSound != null)
-            {
-                mAudioSource.PlayOneShot(CoinSound);
-            }
-            Destroy(other.gameObject);
-        }
-    }
 }
